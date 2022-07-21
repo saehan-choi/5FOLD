@@ -36,11 +36,28 @@ for idx, f in enumerate(range(0, len(img_path_List), eachFOLD)):
     os.makedirs(each_fold_outpath+str(idx+1), exist_ok=True)
 
 for idx, fold in enumerate(range(0, FOLD_num*2, 2)):
-    print(all_list[fold])
+    for path in all_list[fold]:
+        os.makedirs(each_fold_outpath+str(idx+1)+'/val', exist_ok=True)
+        shutil.copy2(path, each_fold_outpath+str(idx+1)+'/val')
     
 for idx, fold in enumerate(range(1, FOLD_num*2, 2)):
-    print(all_list[fold])
+    for path in all_list[fold]:
+        os.makedirs(each_fold_outpath+str(idx+1)+'/val', exist_ok=True)
+        shutil.copy2(path, each_fold_outpath+str(idx+1)+'/val')
     
-# print(img_path_List)
-# print(label_path_List)
 
+for idx in range(0, FOLD_num*2, 2):
+    # os.makedirs(each_fold_outpath+str(idx+1)+'/train')
+    train_fold_list = all_list.copy()
+    # for d in idx:
+    #     del train_fold_list[d]
+    print(train_fold_list)
+    for d in range(2):
+        del train_fold_list[idx]
+    
+    # print('\n')
+    # print(train_fold_list)
+    # print('\n')
+    
+    
+    # shutil.copy2(path, each_fold_outpath+str(idx+1)+'/train')
