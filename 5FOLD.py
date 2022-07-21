@@ -45,19 +45,25 @@ for idx, fold in enumerate(range(1, FOLD_num*2, 2)):
         os.makedirs(each_fold_outpath+str(idx+1)+'/val', exist_ok=True)
         shutil.copy2(path, each_fold_outpath+str(idx+1)+'/val')
     
-
-for idx in range(0, FOLD_num*2, 2):
-    # os.makedirs(each_fold_outpath+str(idx+1)+'/train')
+for idx in range(FOLD_num):
     train_fold_list = all_list.copy()
-    # for d in idx:
-    #     del train_fold_list[d]
-    print(train_fold_list)
+    
+    os.makedirs(each_fold_outpath+str(idx+1)+'/train', exist_ok=True)
+    
     for d in range(2):
         del train_fold_list[idx]
     
-    # print('\n')
-    # print(train_fold_list)
-    # print('\n')
+    for fold_list in train_fold_list:
+        for list in fold_list:
+            shutil.copy2(list, each_fold_outpath+str(idx+1)+'/train')
+
     
     
-    # shutil.copy2(path, each_fold_outpath+str(idx+1)+'/train')
+
+
+#     # os.makedirs(each_fold_outpath+str(idx+1)+'/train', exist_ok=True)
+#     for t in train_fold_list:
+#         print(t)
+        
+#     # print(train_fold_list)
+#     # shutil.copy2(path, each_fold_outpath+str(idx+1)+'/train')
