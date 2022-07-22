@@ -49,6 +49,7 @@ for idx in range(FOLD_num):
     
     os.makedirs(each_fold_outpath+str(idx+1)+'/train', exist_ok=True)
     
+    # delete same label (train/val)
     for d in range(2):
         del train_fold_list[idx*2]
     
