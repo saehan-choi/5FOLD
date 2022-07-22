@@ -1,9 +1,7 @@
 # 5FOLD
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3a0e001-f497-4b03-9afd-5aa69d8742a2/Untitled.png)
+![image](https://user-images.githubusercontent.com/70372577/180336239-ebb22df6-b671-4ea2-8533-2d436f091988.png)
 
+![image](https://user-images.githubusercontent.com/70372577/180336248-0b3dbd51-124e-496b-b1c5-c5fbe7c8cdb3.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/87a8aec5-642a-49ba-9fd8-6acd72c2c023/Untitled.png)
-
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fad53b3-4170-4e34-bab8-ed5f7e174b22/Untitled.png)
+![image](https://user-images.githubusercontent.com/70372577/180336256-7bf1dccc-d4fe-4f2a-8c54-f63be2294832.png)
