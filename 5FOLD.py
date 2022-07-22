@@ -1,4 +1,3 @@
-
 import os
 import random
 import shutil
@@ -26,7 +25,7 @@ for n in nameList:
     labelList = label_path+n[:-3]+'txt'
     img_path_List.append(imgList)
     label_path_List.append(labelList)
-    
+
 os.makedirs(FOLD_path, exist_ok=True)
 eachFOLD = len(img_path_List)//FOLD_num
 
@@ -51,19 +50,8 @@ for idx in range(FOLD_num):
     os.makedirs(each_fold_outpath+str(idx+1)+'/train', exist_ok=True)
     
     for d in range(2):
-        del train_fold_list[idx]
+        del train_fold_list[idx*2]
     
     for fold_list in train_fold_list:
         for list in fold_list:
             shutil.copy2(list, each_fold_outpath+str(idx+1)+'/train')
-
-    
-    
-
-
-#     # os.makedirs(each_fold_outpath+str(idx+1)+'/train', exist_ok=True)
-#     for t in train_fold_list:
-#         print(t)
-        
-#     # print(train_fold_list)
-#     # shutil.copy2(path, each_fold_outpath+str(idx+1)+'/train')
