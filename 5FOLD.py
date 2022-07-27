@@ -63,7 +63,8 @@ for idx in range(FOLD_num):
             shutil.copy2(list, each_fold_outpath+str(idx+1)+'/train')
 
 
-# images / labels
+# make images / labels
+# if you don't use, files will don't devide images/labels partially
 for fold in glob(FOLD_path+'*'):
     for endpath in glob(fold+'/*'):
         os.makedirs(endpath+'/images', exist_ok=True)
@@ -73,4 +74,3 @@ for fold in glob(FOLD_path+'*'):
             shutil.move(imgpath, endpath+"/images/"+imgpath.split('\\')[-1])
         for labelpath in glob(endpath+'/*.txt'):
             shutil.move(labelpath, endpath+"/labels/"+labelpath.split('\\')[-1])
-        
