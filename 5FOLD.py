@@ -2,12 +2,17 @@ import os
 import random
 import shutil
 
+from glob import glob
+# you only need to edit it here 
 img_path = './images/'
 label_path = './labels/'
 FOLD_path = './FOLD/'
 
-each_fold_outpath = './FOLD/FOLD'
 
+# you can revise folder name ex) FOLD1 FOLD2 FOLD3 FOLD4 FOLD5
+each_fold_outpath = FOLD_path+'FOLD'
+
+# you can accese only 5FOLD
 FOLD_num = 5
 
 # images and labels name must have to have same names
@@ -18,7 +23,7 @@ img_path_List = []
 label_path_List = []
 
 all_list = []
-        
+
 # make same labels
 for n in nameList:
     imgList = img_path+n
@@ -56,3 +61,16 @@ for idx in range(FOLD_num):
     for fold_list in train_fold_list:
         for list in fold_list:
             shutil.copy2(list, each_fold_outpath+str(idx+1)+'/train')
+
+
+# images / labels
+for fold in glob(FOLD_path+'*'):
+    for endpath in glob(fold+'/*'):
+        os.makedirs(endpath+'/images', exist_ok=True)
+        os.makedirs(endpath+'/labels', exist_ok=True)
+        
+        for imgpath in glob(endpath+'/*.jpg'):
+            shutil.move(imgpath, endpath+"/images/"+imgpath.split('\\')[-1])
+        for labelpath in glob(endpath+'/*.txt'):
+            shutil.move(labelpath, endpath+"/labels/"+labelpath.split('\\')[-1])
+        
